@@ -86,7 +86,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto">
         {/* Add header div with flex layout */}
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold">My Snippets</h1>
+          <h1 className="text-4xl font-bold">My Snippets--</h1>
           <Button onClick={() => setShowModal(true)}>
             + New Snippet
           </Button>
