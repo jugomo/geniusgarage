@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@geniusgarage/ui/button'
-import { Card } from '@geniusgarage/ui/card'
+import { SnippetCard } from '@geniusgarage/ui/snippet-card'
 
 // Define Snippet interface 
 interface Snippet {
@@ -10,9 +10,10 @@ interface Snippet {
   language: string
   code: string
   tags: string[]
+  createdAt: string  // Add this field
 }
 
-// TODO: Create mockSnippets array
+// Create mockSnippets array
 const mockSnippets: Snippet[] = [
   {
     id: 1,
@@ -20,6 +21,7 @@ const mockSnippets: Snippet[] = [
     language: 'javascript',
     code: 'const sum = arr.reduce((acc, n) => acc + n, 0)',
     tags: ['javascript', 'array', 'functional'],
+    createdAt: 'Jan 15, 2026',  // Add this
   },
   {
     id: 2,
@@ -30,6 +32,7 @@ const mockSnippets: Snippet[] = [
   return () => clearTimeout(timer)
 }, [])`,
     tags: ['react', 'hooks', 'typescript'],
+    createdAt: 'Feb 20, 2026',  // Add this
   },
   {
     id: 3,
@@ -37,6 +40,7 @@ const mockSnippets: Snippet[] = [
     language: 'javascript',
     code: 'const results = await Promise.all(promises.map(p => p()))',
     tags: ['javascript', 'async', 'promises'],
+    createdAt: 'Mar 10, 2026',  // Add this
   },
 ]
 
@@ -55,34 +59,14 @@ export default function Home() {
         {/*  Add grid div that maps over mockSnippets */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {mockSnippets.map((snippet) => (
-            <Card key={snippet.id}>
-              <div className="space-y-3">
-                {/* Title and Language */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-1">{snippet.title}</h3>
-                  <span className="text-sm text-gray-500 font-mono">
-                    {snippet.language}
-                  </span>
-                </div>
-
-                {/* Code Preview */}
-                <pre className="bg-gray-900 text-gray-100 p-3 rounded text-sm overflow-x-auto">
-                  <code>{snippet.code}</code>
-                </pre>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {snippet.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Card>
+            <SnippetCard
+              key={snippet.id}
+              title={snippet.title}
+              language={snippet.language}
+              code={snippet.code}
+              tags={snippet.tags}
+              createdAt={snippet.createdAt}
+            />
           ))}
         </div>
       </div>
