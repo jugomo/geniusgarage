@@ -26,6 +26,29 @@
             "request": "launch",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}/apps/web"
+        },
+        {
+            "name": "Snippet Manager: dev server (Next.js)",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "pnpm",
+            "runtimeArgs": [
+                "--filter",
+                "@geniusgarage/snippet-manager",
+                "dev"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
+            "name": "Snippet Manager: Chrome against dev server",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3001",
+            "webRoot": "${workspaceFolder}/apps/snippet-manager"
         }
     ],
     "compounds": [
@@ -34,6 +57,13 @@
             "configurations": [
                 "Web: dev server (Next.js)",
                 "Web: Chrome against dev server"
+            ]
+        },
+        {
+            "name": "Snippet Manager: dev server + Chrome",
+            "configurations": [
+                "Snippet Manager: dev server (Next.js)",
+                "Snippet Manager: Chrome against dev server"
             ]
         }
     ]
