@@ -11,7 +11,7 @@ export default function Home() {
       </nav>
 
       <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>🧠 GeniusGarage</h1>
+        <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>🧠 GeniusGarage--</h1>
         <p style={{ fontSize: '1.5rem', color: '#666', marginBottom: '2rem' }}>
           Your code snippet library
         </p>
