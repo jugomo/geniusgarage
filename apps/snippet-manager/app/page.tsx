@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@geniusgarage/ui/button';
 import { SnippetCard } from '@geniusgarage/ui/snippet-card';
+import { formatDate } from '@geniusgarage/utils';
 
 // Define Snippet interface
 interface Snippet {
@@ -11,7 +12,7 @@ interface Snippet {
   language: string;
   code: string;
   tags: string[];
-  createdAt: string; // Add this field
+  createdAt: Date;
 }
 
 // Create mockSnippets array
@@ -22,18 +23,18 @@ const initialSnippets: Snippet[] = [
     language: 'javascript',
     code: 'const sum = arr.reduce((acc, n) => acc + n, 0)',
     tags: ['javascript', 'array', 'functional'],
-    createdAt: 'Jan 15, 2026', // Add this
+    createdAt: new Date('2024-01-15'), // Date object
   },
   {
     id: 2,
     title: 'React useEffect Cleanup',
     language: 'typescript',
     code: `useEffect(() => {
-  const timer = setTimeout(() => {}, 1000)
-  return () => clearTimeout(timer)
-}, [])`,
+      const timer = setTimeout(() => {}, 1000)
+      return () => clearTimeout(timer)
+      }, [])`,
     tags: ['react', 'hooks', 'typescript'],
-    createdAt: 'Feb 20, 2026', // Add this
+    createdAt: new Date('2024-02-20'), // Date object
   },
   {
     id: 3,
@@ -41,11 +42,13 @@ const initialSnippets: Snippet[] = [
     language: 'javascript',
     code: 'const results = await Promise.all(promises.map(p => p()))',
     tags: ['javascript', 'async', 'promises'],
-    createdAt: 'Mar 10, 2026', // Add this
+    createdAt: new Date('2024-03-10'), // Date object
   },
 ];
 
 export default function Home() {
+  //const unusedVar = 'test'; // force lint eerror for testing
+
   const [snippets, setSnippets] = useState<Snippet[]>(initialSnippets);
   const [showModal, setShowModal] = useState(false);
   const [newSnippet, setNewSnippet] = useState({
@@ -69,11 +72,7 @@ export default function Home() {
         .split(',')
         .map((t) => t.trim())
         .filter(Boolean),
-      createdAt: new Date().toLocaleDateString('en-US', {
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric',
-      }),
+      createdAt: new Date(),
     };
 
     // Add to snippets array (newest first)
@@ -287,7 +286,7 @@ export default function Home() {
               language={snippet.language}
               code={snippet.code}
               tags={snippet.tags}
-              createdAt={snippet.createdAt}
+              createdAt={formatDate(snippet.createdAt)}
             />
           ))}
         </div>
