@@ -14,11 +14,15 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.6",
     "turbo": "^2.3.3"
   },
   "packageManager": "pnpm@10.0.0",
   "engines": {
     "node": ">=20.9.0"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true
   }
 }

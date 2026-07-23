@@ -20,7 +20,7 @@ export default function Home() {
         <Button variant="secondary">Get Started</Button>
 
         <p style={{ color: '#666', marginTop: '3rem', fontSize: '0.875rem' }}>
-          This is the starter project. You'll build out the full platform as you progress through the course.
+          This is the starter project. You&apos;ll build out the full platform as you progress through the course.
         </p>
       </div>
     </main>
