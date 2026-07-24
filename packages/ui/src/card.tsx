@@ -1,28 +1,32 @@
 export interface CardProps {
-    title?: string
-    children: React.ReactNode
+  title?: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
-export function Card({ title, children }: CardProps) {
-    return (
-        <div style={{
-            padding: '2rem',
-            border: '1px solid #e5e7eb',
-            borderRadius: '0.5rem',
-        }}>
-            {title && (
-                <h3 style={{
-                    fontSize: '1.25rem',
-                    fontWeight: 'bold',
-                    marginTop: 0,
-                    marginBottom: '0.5rem'
-                }}>
-                    {title}
-                </h3>
-            )}
-            <div style={{ color: '#666' }}>
-                {children}
-            </div>
-        </div>
-    )
+export function Card({ title, children, className }: CardProps) {
+  return (
+    <div
+      className={['bg-white', 'rounded-lg', className].filter(Boolean).join(' ')}
+      style={{
+        padding: '2rem',
+        border: '1px solid #e5e7eb',
+        borderRadius: '0.5rem',
+      }}
+    >
+      {title && (
+        <h3
+          style={{
+            fontSize: '1.25rem',
+            fontWeight: 'bold',
+            marginTop: 0,
+            marginBottom: '0.5rem',
+          }}
+        >
+          {title}
+        </h3>
+      )}
+      <div style={{ color: '#666' }}>{children}</div>
+    </div>
+  );
 }

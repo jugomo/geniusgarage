@@ -26,8 +26,17 @@ export function Button({ children, onClick, variant = 'primary' }: ButtonProps) 
     },
   };
 
+  const variantClasses = {
+    primary: 'bg-blue-500',
+    secondary: 'bg-gray-200 text-gray-900',
+  };
+
   return (
-    <button onClick={onClick} style={{ ...baseStyles, ...variantStyles[variant] }}>
+    <button
+      className={variantClasses[variant]}
+      onClick={onClick}
+      style={{ ...baseStyles, ...variantStyles[variant] }}
+    >
       {children}
     </button>
   );
