@@ -36,3 +36,4 @@ pnpm --filter @geniusgarage/ui dev:test
 ## VsCode ———————————————————————
 
 TypeScript: Restart TS Server
+# Test CI
