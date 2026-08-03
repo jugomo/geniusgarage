@@ -15,10 +15,7 @@ export function Button({ children, onClick, variant = 'primary' }: ButtonProps) 
   };
 
   const variantStyles = {
-    primary: {
-      backgroundColor: '#0070f3',
-      color: 'white',
-    },
+    primary: {},
     secondary: {
       backgroundColor: '#f5f5f5',
       color: '#333',
