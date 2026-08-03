@@ -2,7 +2,7 @@
   "name": "geniusgarage",
   "version": "0.1.0",
   "private": true,
-    "workspaces": [
+  "workspaces": [
     "apps/*",
     "packages/*"
   ],
