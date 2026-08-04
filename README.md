@@ -10,11 +10,11 @@ Practice monorepo built as an implementation of Vercel Academy's [Production Mon
 
 Live Vercel deployments for each app in this monorepo:
 - WEB: main marketing/demo app
-  https://geniusgarage-web-phi.vercel.app/
+    https://geniusgarage-web-phi.vercel.app/
 - SNIPPET MANAGER: app for saving and organizing code snippets, backed by the `db` package
-  https://geniusgarage-snippet-manager-two.vercel.app/
+    https://geniusgarage-snippet-manager-two.vercel.app/
 - DOCS: documentation app
-  https://geniusgarage-docs-lac.vercel.app/
+    https://geniusgarage-docs-lac.vercel.app/
 
 ## Commands
 
