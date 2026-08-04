@@ -1,13 +1,20 @@
-import Link from 'next/link'
-import { Button } from '@geniusgarage/ui/button'
+import Link from 'next/link';
+import { Button } from '@geniusgarage/ui/button';
 
 export default function Home() {
   return (
     <main style={{ padding: '2rem', fontFamily: 'system-ui', maxWidth: '800px', margin: '0 auto' }}>
       <nav style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '2rem' }}>
-        <Link href="/features" style={{ textDecoration: 'none', color: '#0070f3', fontWeight: 'bold' }}>
+        <Link
+          href="/features"
+          style={{ textDecoration: 'none', color: '#0070f3', fontWeight: 'bold' }}
+        >
           Features
         </Link>
+        ---
+        <a href="http://localhost:3002" className="text-blue-500 underline">
+          View Component Docs
+        </a>
       </nav>
 
       <div style={{ textAlign: 'center', marginTop: '4rem' }}>
@@ -20,9 +27,10 @@ export default function Home() {
         <Button variant="secondary">Get Started</Button>
 
         <p style={{ color: '#666', marginTop: '3rem', fontSize: '0.875rem' }}>
-          This is the starter project. You&apos;ll build out the full platform as you progress through the course.
+          This is the starter project. You&apos;ll build out the full platform as you progress
+          through the course.
         </p>
       </div>
     </main>
-  )
+  );
 }

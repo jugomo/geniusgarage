@@ -5,6 +5,10 @@ import { env } from '../env';
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
+      <a href="http://localhost:3000" className="text-blue-500 underline">
+        Back to Marketing
+      </a>
+
       <h1 className="text-4xl font-bold mb-4">{env.NEXT_PUBLIC_APP_NAME}</h1>
       <p className="text-gray-600 mb-8">Component library documentation and examples</p>
 
