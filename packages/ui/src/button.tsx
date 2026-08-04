@@ -1,7 +1,7 @@
 export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'danger'; // New variant!
 }
 
 export function Button({ children, onClick, variant = 'primary' }: ButtonProps) {
@@ -24,11 +24,14 @@ export function Button({ children, onClick, variant = 'primary' }: ButtonProps) 
       color: '#333',
       border: '1px solid #e5e7eb',
     },
+    danger: {},
   };
 
   const variantClasses = {
     primary: 'bg-blue-500',
     secondary: 'bg-gray-200 text-gray-900',
+    success: 'bg-green-500 text-white hover:bg-green-600', // New variant
+    danger: 'bg-red-500 text-white hover:bg-red-600', // New variant!
   };
 
   return (
