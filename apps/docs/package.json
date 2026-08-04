@@ -6,7 +6,7 @@
     "dev": "next dev --port 3002",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "next": "14.x",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@geniusgarage/typescript-config": "workspace:*",
     "@geniusgarage/eslint-config": "workspace:*",
+    "eslint": "^9",
     "typescript": "^5",
     "tailwindcss": "^3",
     "autoprefixer": "^10",
