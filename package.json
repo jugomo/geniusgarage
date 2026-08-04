@@ -19,6 +19,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@turbo/gen": "^2.10.8",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.6",
     "turbo": "^2.3.3"
