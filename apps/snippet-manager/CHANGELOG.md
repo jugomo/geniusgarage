@@ -1,5 +1,14 @@
 # @geniusgarage/snippet-manager
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @geniusgarage/utils@1.0.1
+  - @geniusgarage/typescript-config@2.0.0
+
 ## 1.0.0
 
 ### Major Changes
