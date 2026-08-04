@@ -2,39 +2,37 @@
 
 ## TURBOREPO ————————————————————
 
-pnpm turbo --version
-
-pnpm list --depth 0 -r
-
-npx turbo ls
-
-# run all
-
-pnpm dev
-
-# build all
-
 pnpm turbo run build
 pnpm turbo run build —filter=web
+pnpm turbo --version
 pnpm turbo run build --dry-run
+
+pnpm list --depth 0 -r
+npx turbo ls
+
+
+# run lint and tests:
+pnpm run lint
+pnpm run test
+pnpm --filter @geniusgarage/ui test
+
+
+# build and run
+pnpm dev                            —> run all
+pnpm turbo run build         —> build all
+ 
+
+
+# Disable remote caching (if needed)
+# Disable for single command
+pnpm turbo build --no-cache
+# Disable permanently (remove config)
+rm .turbo/config.json
+
+
 
 ## VITEST ———————————————————
 
-# run test
-
-pnpm --filter @geniusgarage/ui test
-
-# run with coverage
-
-pnpm --filter @geniusgarage/ui test -- --coverage
-cd packages/ui && pnpm test --coverage
-
-# run test watch mode
-
-pnpm --filter @geniusgarage/ui dev:test
-
-## VsCode ———————————————————————
-
-TypeScript: Restart TS Server
-# Test CI
-# another commit
+pnpm --filter @geniusgarage/ui test                              —> run test
+pnpm --filter @geniusgarage/ui test -- --coverage      —> run with coverage
+pnpm --filter @geniusgarage/ui dev:test                       —> run test watch mode
