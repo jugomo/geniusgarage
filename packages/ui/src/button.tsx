@@ -30,6 +30,7 @@ export function Button({ children, onClick, variant = 'primary' }: ButtonProps) 
   const variantClasses = {
     primary: 'bg-blue-500',
     secondary: 'bg-gray-200 text-gray-900',
+    success: 'bg-green-500 text-white hover:bg-green-600', // New variant
     danger: 'bg-red-500 text-white hover:bg-red-600', // New variant!
   };
 
